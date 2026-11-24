@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
+import { basePath } from "./src/lib/site";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Static HTML in out/, deployed to GitHub Pages (.github/workflows/deploy.yml).
+  output: "export",
+  basePath,
+  trailingSlash: true,
   turbopack: {
     rules: {
       "*.css": {

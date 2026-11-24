@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { PencilSimple, X } from "@phosphor-icons/react/dist/ssr";
+import { asset } from "@/lib/site";
 
 /** A rectangle in percent of its parent. */
 export type Rect = { x: number; y: number; w: number; h: number };
@@ -47,7 +48,7 @@ export function Screen({
           </div>
           <div className="flex items-center gap-2">
             {menubar}
-            <img src="/favicon.svg" alt="" className="size-3.5" />
+            <img src={asset("/favicon.svg")} alt="" className="size-3.5" />
             <span className="caption-4 text-white/85">Thu 10:24</span>
           </div>
         </div>

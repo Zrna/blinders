@@ -10,6 +10,7 @@ import { Nav } from '@/components/Nav';
 import { ShareNotice } from '@/components/ShareNotice';
 import { Reveal } from '@/components/Reveal';
 import { DownloadButton, Kbd } from '@/components/ui';
+import { asset } from '@/lib/site';
 import {
   LookScene,
   ModesScene,
@@ -373,7 +374,7 @@ export default function Home() {
         <section id='download' className='px-4 py-24'>
           <Reveal className='mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-3xl border border-line bg-surface px-6 py-16 text-center'>
             <img
-              src='/blinders-logo.svg'
+              src={asset('/blinders-logo.svg')}
               alt='Blinders app icon'
               className='size-16 rounded-2xl'
             />
@@ -393,7 +394,7 @@ export default function Home() {
             className='flex items-center gap-2 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-accent'
           >
             <img
-              src='/blinders-logo.svg'
+              src={asset('/blinders-logo.svg')}
               alt=''
               className='size-6 rounded-md'
             />
@@ -404,7 +405,7 @@ export default function Home() {
               {[
                 { href: '#features', label: 'Features' },
                 { href: '#faq', label: 'FAQ' },
-                { href: '/privacy', label: 'Privacy' },
+                { href: asset('/privacy/'), label: 'Privacy' },
               ].map(l => (
                 <li key={l.href}>
                   <a

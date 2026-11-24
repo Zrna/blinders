@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { nav } from "@/lib/site";
 import { cx } from "./mock/primitives";
 import { DownloadButton } from "./ui";
+import { asset } from "@/lib/site";
 
 const focus = "outline-none focus-visible:ring-2 focus-visible:ring-accent";
 
@@ -44,7 +45,7 @@ export function Nav() {
           className="flex w-full max-w-3xl items-center gap-2 rounded-2xl border border-line bg-surface/70 p-2 backdrop-blur-xl md:w-auto"
         >
           <a href="#top" className={cx("flex items-center gap-2 rounded-lg px-2 py-1", focus)}>
-            <img src="/blinders-logo.svg" alt="" className="size-6 rounded-md" />
+            <img src={asset("/blinders-logo.svg")} alt="" className="size-6 rounded-md" />
             <span className="title-3 font-display font-bold">Blinders</span>
           </a>
           <ul className="hidden items-center md:flex">

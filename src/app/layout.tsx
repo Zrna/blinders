@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
-import { site } from "@/lib/site";
+import { asset, site } from "@/lib/site";
 import "./globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -21,26 +21,26 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(new URL(site.url).origin), // Next adds basePath itself
   title: site.title,
   description: site.description,
   applicationName: site.name,
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: asset("/favicon.ico"), sizes: "any" },
+      { url: asset("/favicon.svg"), type: "image/svg+xml" },
+      { url: asset("/favicon-32x32.png"), type: "image/png", sizes: "32x32" },
+      { url: asset("/favicon-16x16.png"), type: "image/png", sizes: "16x16" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: asset("/apple-touch-icon.png"),
   },
-  manifest: "/site.webmanifest",
+  manifest: asset("/site.webmanifest"),
   openGraph: {
     type: "website",
     siteName: site.name,
     title: site.title,
     description: site.description,
-    url: "/",
+    url: site.url,
   },
   twitter: {
     card: "summary_large_image",
