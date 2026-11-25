@@ -73,8 +73,8 @@ const features: Feature[] = [
   },
   {
     id: 'follow',
-    title: 'It follows the window',
-    body: 'Areas are stored relative to the window’s content, so they move with the window and scale when you resize it.',
+    title: 'It follows the window and the page',
+    body: 'Areas move with the window and scale when you resize it. When the page scrolls, the cover stays on what it hides: it scrolls out of view with that content and comes back with it.',
     mock: <FollowScene />,
   },
   {
@@ -146,7 +146,11 @@ const faq: { q: string; a: string }[] = [
   },
   {
     q: 'Why does live blur need the Screen Recording permission?',
-    a: 'Blinders has to see what is underneath the area to blur it. If you don’t grant the permission, the Solid color style still works.',
+    a: 'Blinders has to see what is underneath the area to blur it, and to notice when the page scrolls. If you don’t grant the permission, the Solid color style still works.',
+  },
+  {
+    q: 'What happens when I scroll the page?',
+    a: 'The cover moves with the content it hides. When that content scrolls out of view, the cover goes with it, and it comes back when you scroll back. Headers and toolbars that don’t scroll keep their cover in place. Without the Screen Recording permission, the cover stays at the same spot in the window.',
   },
   {
     q: 'Is anything recorded, saved or uploaded?',
